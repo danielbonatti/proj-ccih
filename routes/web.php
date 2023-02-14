@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsuarioController;
 
+use App\Http\Controllers\PesquisaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +23,8 @@ use App\Http\Controllers\UsuarioController;
 
 Route::get('/',[UsuarioController::class,'login'])->name('login.page');
 Route::post('/auth',[UsuarioController::class,'auth'])->name('auth.user');
+
+Route::get('search',[PesquisaController::class,'search']);
 
 /*Route::get('/user',[UsuarioController::class,'user'])->name('user.page');
 Route::post('/create',[UsuarioController::class,'create'])->name('create.user');*/

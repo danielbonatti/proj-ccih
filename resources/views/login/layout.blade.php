@@ -16,7 +16,7 @@
     <title>Login CCIH</title>
   </head>
   <body class="text-center">
-  
+
     @yield('content')
 
     <!-- JavaScript -->

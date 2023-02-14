@@ -36,8 +36,10 @@ class UsuarioController extends Controller
         ]);
         
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            dd('Logou');
+            // Logou
+            return view('pesquisa.index');
         }else{
+            // Não logou
             return redirect()->back()->with('danger','Credencial inválida');
         }
     }
