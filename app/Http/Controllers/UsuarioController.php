@@ -36,6 +36,8 @@ class UsuarioController extends Controller
         ]);
         
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+        //if(Auth::once(['email' => $request->email, 'password' => $request->password])){
+            //$request->session()->regenerate();
             // Logou
             return view('pesquisa.index');
         }else{
@@ -47,6 +49,12 @@ class UsuarioController extends Controller
     public function user()
     {
         return view('user.index');
+    }
+
+    public function out()
+    {
+        Auth::logout();
+        return view('login.index');
     }
 
     /**

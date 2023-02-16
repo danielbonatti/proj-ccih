@@ -1,10 +1,9 @@
 @extends('pesquisa.layout')
 @section('content')
 
-    <div class="container" style="margin-top: 50px;">
+    <div class="container" class="px-md-4">
         <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <h3 class="text-center text-danger">Pequisa CCIH</h3><hr>
                 <div class="form-group">
                     <h4>Busque por nome ou setor</h4>
@@ -13,7 +12,6 @@
 
                 <div id="search_list"></div>
             </div>
-            <div class="col-md-1"></div>
         </div>    
     </div>
 

@@ -38,9 +38,9 @@ class PacienteController extends Controller
             ->update(['ate_infada' => $request->infos]);
         
         if($data){
-            return redirect()->back()->with('mensagem','Anotações gravadas com sucesso.');
+            return redirect()->back()->with('positivo','Anotação gravada com sucesso.');
         } else {
-            return redirect()->back()->with('mensagem','Ocorreu um erro ao gravar a anotação.');
+            return redirect()->back()->with('negativo','Nenhuma alteração foi efetuada.');
         }
     }
 }

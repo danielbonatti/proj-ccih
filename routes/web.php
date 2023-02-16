@@ -25,13 +25,16 @@ use App\Http\Controllers\PacienteController;
 
 Route::get('/',[UsuarioController::class,'login'])->name('login.page');
 Route::post('/auth',[UsuarioController::class,'auth'])->name('auth.user');
+Route::get('/out',[UsuarioController::class,'out'])->name('user.out');
 
-Route::get('/list',[PesquisaController::class,'index'])->name('search.patient');
-Route::get('search',[PesquisaController::class,'search']);
+Route::middleware(['client'])->group(function(){
+    Route::get('/list',[PesquisaController::class,'index'])->name('search.patient');
+    Route::get('search',[PesquisaController::class,'search']);
 
-Route::get('/anotacao/{id}',[PacienteController::class,'note']);
+    Route::get('/anotacao/{id}',[PacienteController::class,'note']);
 
-Route::post('/anotacao_save',[PacienteController::class,'gravar'])->name('note.save');
+    Route::post('/anotacao_save',[PacienteController::class,'gravar'])->name('note.save');
+});
 
 /*Route::get('/user',[UsuarioController::class,'user'])->name('user.page');
 Route::post('/create',[UsuarioController::class,'create'])->name('create.user');*/

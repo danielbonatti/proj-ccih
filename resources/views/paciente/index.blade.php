@@ -1,19 +1,30 @@
 @extends('paciente.layout')
 @section('content')
 
-    <div class="container" style="margin-top: 50px;">
+    <div class="container"  class="px-md-4">
         <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <form method="post" action=" {{route('note.save')}} ">
                     @csrf 
                     
-                    @if(session('mensagem'))
+                    @if(session('positivo'))
                         <div class="form-group row">
                             <div class="col-md-12 text-center">
                                 <div class="alert alert-success">
                                     <ul>
-                                        <li>{{session('mensagem')}}</li>
+                                        <li>{{session('positivo')}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
+                    @if(session('negativo'))
+                        <div class="form-group row">
+                            <div class="col-md-12 text-center">
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        <li>{{session('negativo')}}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -48,7 +59,7 @@
 
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <label for="infos">Anotações</label>
+                            <label for="infos">Anotação</label>
                             <textarea class="form-control" id="infos" name="infos" rows="10">{{$infos}}</textarea>
                         </div>
                     </div>
@@ -58,7 +69,6 @@
                     <a href="{{ route('search.patient') }}" class="btn btn-secondary btn-lg">Voltar</a>
                 </form>
             </div>
-            <div class="col-md-1"></div>
         </div>    
     </div>
 

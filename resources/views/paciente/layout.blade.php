@@ -8,10 +8,17 @@
     <script src="{{ asset('/js/app.js') }}" defer></script>
     <!-- Styles -->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Anotações CCIH</title>
   </head>
   <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <i class="fa fa-plus mr-1" style="font-size:25px; color: #c0392b;"></i><h5 class="my-0 mr-md-auto font-weight-normal">HSIST</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a href="{{route('user.out')}}" class="p-2 text-dark" href="#">Sair</a>
+      </nav>
+    </div>
   
     @yield('content')
 
