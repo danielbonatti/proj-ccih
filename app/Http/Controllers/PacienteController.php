@@ -18,15 +18,20 @@ class PacienteController extends Controller
             ->select('chc_ate.ate_numate','chc_ate.ate_nome','chc_prt.prt_nascto','chc_pcc.pcc_especi','chc_ate.ate_infada','chc_ate.nrecno')
             ->first();
         if(!is_null($data)){    
-            return view('paciente.index')
-                ->with(['atend' => $data->ate_numate,
-                    'nome' => $data->ate_nome,
-                    'nascto' => $data->prt_nascto,
-                    'idade' => (new hs_funcoes)->hs_verida($data->prt_nascto,date("Y-m-d")),
-                    'setor' => $data->pcc_especi,
-                    'infos' => $data->ate_infada,
-                    'nrecno' => $data->nrecno
-                ]);
+            $dados = ['atend' => $data->ate_numate,
+                'nome' => $data->ate_nome,
+                'nascto' => $data->prt_nascto,
+                'idade' => (new hs_funcoes)->hs_verida($data->prt_nascto,date("Y-m-d")),
+                'setor' => $data->pcc_especi,
+                'infos' => $data->ate_infada,
+                'nrecno' => $data->nrecno];
+            if($request->opc == 1){
+                return view('paciente.opcoes')
+                    ->with($dados);
+            } else {
+                return view('paciente.index')
+                    ->with($dados);
+            }
         } else {
             return view('pesquisa.index');
         }

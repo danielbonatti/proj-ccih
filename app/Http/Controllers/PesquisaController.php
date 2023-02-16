@@ -43,7 +43,9 @@ class PesquisaController extends Controller
                     <tbody>';
         
                         foreach($data as $row){
-                            $aux="/anotacao/$row->nrecno";
+                            $aux="/anotacao/$row->nrecno/1";
+                            //$aux="/anotacao/$row->nrecno";
+                            //$aux="{{route('patient.options',['id' => $row->nrecno,'opc' => 1])}}";
                             $output .='
                             <tr>
                             <th scope="row">'.$row->ate_nome.'</th>

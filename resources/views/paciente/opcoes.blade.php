@@ -57,17 +57,63 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <label for="infos">Anotação</label>
-                            <textarea class="form-control" id="infos" name="infos" rows="10">{{$infos}}</textarea>
+                    <div class="row text-center my-4">
+                        <div class="col-sm-6 col-md-3 col-lg-2">
+                            <div class="img-card">
+                                <a href="#">
+                                    <i class="fa fa-clipboard" style="font-size:80px;"></i>
+                                    <p>Dados Iniciais</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-3 col-lg-2">
+                            <div class="img-card">
+                                <a href="{{route('patient.options',['id' => $nrecno, 'opc' => 2])}}">
+                                    <i class="fa fa-file-text-o" style="font-size:80px;"></i>
+                                    <p>Anotações</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-3 col-lg-2">
+                            <div class="img-card">
+                                <a href="#">
+                                    <i class="fa fa-heartbeat" style="font-size:80px;"></i>
+                                    <p>Cirurgias</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-3 col-lg-2">
+                            <div class="img-card">
+                                <a href="#">
+                                    <i class="fa fa-medkit" style="font-size:80px;"></i>
+                                    <p>Precaução</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-3 col-lg-2">
+                            <div class="img-card">
+                                <a href="#">
+                                    <i class="fa fa-hand-o-left" style="font-size:80px;"></i>
+                                    <p>Saída</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-3 col-lg-2">
+                            <div class="img-card">
+                                <a href="#">
+                                    <i class="fa fa-sticky-note-o" style="font-size:80px;"></i>
+                                    <p>Impressão</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
-
-                    <input type="hidden" id="nrecno" name="nrecno" value="{{$nrecno}}">
-                    <button class="btn btn-primary btn-lg" type="submit">Gravar</button>
-                    <!--<a href="{{ route('search.patient') }}" class="btn btn-secondary btn-lg">Voltar</a>-->
-                    <a href="{{ route('patient.options',['id' => $nrecno, 'opc' => 1]) }}" class="btn btn-secondary btn-lg">Voltar</a>
+                   
+                    <a href="{{ route('search.patient') }}" class="btn btn-secondary btn-lg">Voltar</a>
                 </form>
             </div>
         </div>    
