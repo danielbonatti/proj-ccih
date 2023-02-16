@@ -6,6 +6,8 @@ use App\Http\Controllers\UsuarioController;
 
 use App\Http\Controllers\PesquisaController;
 
+use App\Http\Controllers\PacienteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +26,12 @@ use App\Http\Controllers\PesquisaController;
 Route::get('/',[UsuarioController::class,'login'])->name('login.page');
 Route::post('/auth',[UsuarioController::class,'auth'])->name('auth.user');
 
+Route::get('/list',[PesquisaController::class,'index'])->name('search.patient');
 Route::get('search',[PesquisaController::class,'search']);
+
+Route::get('/anotacao/{id}',[PacienteController::class,'note']);
+
+Route::post('/anotacao_save',[PacienteController::class,'gravar'])->name('note.save');
 
 /*Route::get('/user',[UsuarioController::class,'user'])->name('user.page');
 Route::post('/create',[UsuarioController::class,'create'])->name('create.user');*/
