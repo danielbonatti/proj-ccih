@@ -10,7 +10,7 @@
                     <input type="text" name="search" id="search" placeholder="Digite o nome ou setor" class="form-control" onfocus="this.value=''">
                 </div>
 
-                <div id="search_list"></div>
+                <div class="table-responsive" id="search_list"></div>
             </div>
         </div>    
     </div>

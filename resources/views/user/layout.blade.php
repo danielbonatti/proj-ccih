@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Scripts -->
-    <script src="{{ asset('/js/app.js') }}" defer></script>
+    <script src="{{ asset('public/js/app.js') }}" defer></script>
     <!-- Styles -->
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/signin.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/signin.css') }}" rel="stylesheet">
 
     <!-- jQuery 2.2.3 
     <script src="{{ asset('public/plugins/jQuery/jquery-2.2.3.min.js') }}"></script> -->

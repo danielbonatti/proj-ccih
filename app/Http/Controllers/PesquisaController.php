@@ -32,26 +32,26 @@ class PesquisaController extends Controller
         
                 $output ='
                     <table class="table">
-                    <thead>
+                    <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Setor</th>
-                        <th scope="col">Convênio</th>
-                        <th scope="col">Opções</th>
+                        <th class="th-sm">Nome</th>
+                        <th class="th-sm">Setor</th>
+                        <th class="th-sm">Convênio</th>
+                        <th class="th-sm">Opções</th>
                     </tr>
                     </thead>
                     <tbody>';
         
                         foreach($data as $row){
-                            $aux="/anotacao/$row->nrecno/1";
+                            $aux="anotacao/$row->nrecno/1";
                             //$aux="/anotacao/$row->nrecno";
                             //$aux="{{route('patient.options',['id' => $row->nrecno,'opc' => 1])}}";
                             $output .='
                             <tr>
-                            <th scope="row">'.$row->ate_nome.'</th>
+                            <td>'.$row->ate_nome.'</td>
                             <td>'.$row->pcc_especi.'</td>
                             <td>'.$row->razao.'</td>
-                            <td><a href="'.$aux.'"><i class="fa fa-pencil"></i></a></td>
+                            <td><a href="'.$aux.'" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
                             </tr>
                             ';
                         }

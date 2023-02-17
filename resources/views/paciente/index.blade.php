@@ -36,11 +36,11 @@
                             <label for="atend">Nº Atendimento</label>
                             <input type="text" class="form-control" id="atend" name="atend" value="{{$atend}}" disabled>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label for="nome">Paciente</label>
                             <input type="text" class="form-control" id="nome" name="nome" value="{{$nome}}" disabled>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <label for="nascto">Data Nascimento</label>
                             <input type="date" class="form-control" id="nascto" name="nascto" value="{{$nascto}}" disabled>
                         </div>

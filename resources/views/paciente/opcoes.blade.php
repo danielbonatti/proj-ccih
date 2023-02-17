@@ -36,11 +36,11 @@
                             <label for="atend">Nº Atendimento</label>
                             <input type="text" class="form-control" id="atend" name="atend" value="{{$atend}}" disabled>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label for="nome">Paciente</label>
                             <input type="text" class="form-control" id="nome" name="nome" value="{{$nome}}" disabled>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <label for="nascto">Data Nascimento</label>
                             <input type="date" class="form-control" id="nascto" name="nascto" value="{{$nascto}}" disabled>
                         </div>
@@ -60,7 +60,7 @@
                     <div class="row text-center my-4">
                         <div class="col-sm-6 col-md-3 col-lg-2">
                             <div class="img-card">
-                                <a href="#">
+                                <a href="#" class="desativado">
                                     <i class="fa fa-clipboard" style="font-size:80px;"></i>
                                     <p>Dados Iniciais</p>
                                 </a>
@@ -78,7 +78,7 @@
 
                         <div class="col-sm-6 col-md-3 col-lg-2">
                             <div class="img-card">
-                                <a href="#">
+                                <a href="#" class="desativado">
                                     <i class="fa fa-heartbeat" style="font-size:80px;"></i>
                                     <p>Cirurgias</p>
                                 </a>
@@ -87,7 +87,7 @@
 
                         <div class="col-sm-6 col-md-3 col-lg-2">
                             <div class="img-card">
-                                <a href="#">
+                                <a href="#" class="desativado">
                                     <i class="fa fa-medkit" style="font-size:80px;"></i>
                                     <p>Precaução</p>
                                 </a>
@@ -96,7 +96,7 @@
 
                         <div class="col-sm-6 col-md-3 col-lg-2">
                             <div class="img-card">
-                                <a href="#">
+                                <a href="#" class="desativado">
                                     <i class="fa fa-hand-o-left" style="font-size:80px;"></i>
                                     <p>Saída</p>
                                 </a>
@@ -105,7 +105,7 @@
 
                         <div class="col-sm-6 col-md-3 col-lg-2">
                             <div class="img-card">
-                                <a href="#">
+                                <a href="#" class="desativado">
                                     <i class="fa fa-sticky-note-o" style="font-size:80px;"></i>
                                     <p>Impressão</p>
                                 </a>
