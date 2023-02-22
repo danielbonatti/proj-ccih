@@ -33,20 +33,39 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function(){
+            $(document).ready(function(){               
                 $('#search').on('keyup',function(){
-                    var query= $(this).val();
-                    $.ajax({
-                        url:"search",
-                        type:"GET",
-                        data:{'search':query},
-                        success:function(data){
-                            $('#search_list').html(data);
-                        }
-                    });
-                    // end of ajax call
+                    var query = $(this).val();
+                    var busca = $('#busca').val();
+                    var ordem = $('#ordem').val();
+                    queryGet(query,busca,ordem);
+                });
+
+                $('#busca').on('change',function(){
+                    var query = $('#search').val();
+                    var busca = $('#busca').val();
+                    var ordem = $('#ordem').val();
+                    queryGet(query,busca,ordem);
+                });
+
+                $('#ordem').on('change',function(){
+                    var query = $('#search').val();
+                    var busca = $('#busca').val();
+                    var ordem = $('#ordem').val();
+                    queryGet(query,busca,ordem);
                 });
             });
+
+            function queryGet(query,busca,ordem){
+                $.ajax({
+                    url:"search",
+                    type:"GET",
+                    data:{'search':query,'busca':busca,'ordem':ordem},
+                    success:function(data){
+                        $('#search_list').html(data);
+                    }
+                });
+            }
         </script>
 
     </body>

@@ -15,14 +15,45 @@ class PesquisaController extends Controller
     public function search(Request $request)
     {        
         if($request->ajax()){
-            
+
+            //return $request->input('search');
             $data = DB::table('chc_ate')
                 ->leftJoin('chc_pcc','chc_pcc.pcc_codigo','=','chc_ate.ate_codset')
                 ->leftJoin('clientes','clientes.xclientes','=','chc_ate.ate_conven')
-                ->where('chc_ate.ate_modate','35')
-                ->where('chc_ate.ate_nome','like','%'.$request->search.'%')
-                ->orWhere('chc_pcc.pcc_especi','like','%'.$request->search.'%')
-                ->select('chc_ate.ate_nome','chc_pcc.pcc_especi','clientes.razao','chc_ate.nrecno')
+                ->where('chc_ate.ate_modate','35');
+
+            // tipo de busca "contendo" ou "iniciando com"
+            if($request->busca == 1){
+                $data = $data->where('chc_ate.ate_nome','like','%'.$request->search.'%')
+                    ->orWhere('chc_pcc.pcc_especi','like','%'.$request->search.'%');
+            } else {
+                $data = $data->where('chc_ate.ate_nome','like',$request->search.'%')
+                    ->orWhere('chc_pcc.pcc_especi','like',$request->search.'%');
+            }
+
+            // ordenação
+            switch($request->ordem){
+                case 1:
+                    $data = $data->orderBy('chc_ate.ate_nome','asc');
+                    break;
+                case 2:
+                    $data = $data->orderBy('chc_ate.ate_nome','desc');
+                    break;
+                case 3:
+                    $data = $data->orderBy('chc_pcc.pcc_especi','asc');
+                    break;
+                case 4:
+                    $data = $data->orderBy('chc_pcc.pcc_especi','desc');
+                    break;
+            }
+
+            /*if($request->ordem == 1){
+                $data = $data->orderBy('chc_ate.ate_nome','asc');
+            } else {
+                $data = $data->orderBy('chc_ate.ate_nome','desc');
+            }*/
+            
+            $data = $data->select('chc_ate.ate_nome','chc_pcc.pcc_especi','clientes.razao','chc_ate.nrecno')
                 ->limit(30)
                 ->get();
 
