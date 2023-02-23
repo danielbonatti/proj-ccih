@@ -7,6 +7,7 @@
     <!-- Scripts -->
     <script src="{{ asset('public/js/app.js') }}" defer></script>
     <!-- Styles -->
+    <link rel="icon" href="{{ asset('public/images/favicon-16x16.ico') }}" type="image/x-icon">
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/signin.css') }}" rel="stylesheet">
 

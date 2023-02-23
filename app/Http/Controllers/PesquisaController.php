@@ -31,7 +31,7 @@ class PesquisaController extends Controller
                     ->orWhere('chc_pcc.pcc_especi','like',$request->search.'%');
             }
 
-            // ordenaÃ§Ã£o
+            // ordenação
             switch($request->ordem){
                 case 1:
                     $data = $data->orderBy('chc_ate.ate_nome','asc');
