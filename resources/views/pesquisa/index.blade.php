@@ -6,18 +6,18 @@
             <div class="col-md-12">
                 <h3 class="text-center text-danger">Pequisa CCIH</h3><hr>
                 <div class="form-group row">
-                    <div class="col-sm-12 col-md-8">
+                    <div class="col-md-10">
                         <label for="search">Busque por nome ou setor</label>
                         <input type="text" class="form-control" id="search" name="search" placeholder="Digite o nome ou setor" onfocus="this.value=''">
                     </div>
-                    <div class="col-sm-6 col-md-2">
-                        <label for="busca">Tipo</label>
+                    <div class="col-md-2">
+                        <label for="busca">Procura</label>
                         <select class="form-control" id="busca" name="busca">
                             <option value="1">contendo</option>
                             <option value="2">iniciando com</option>
                         </select>
                     </div>
-                    <div class="col-sm-6 col-md-2">
+                    <!--<div class="col-md-2">
                         <label for="ordem">Ordenação</label>
                         <select class="form-control" id="ordem" name="ordem">
                             <optgroup label="Nome">    
@@ -29,7 +29,7 @@
                                 <option value="4">decrescente</option>
                             </optgroup>
                         </select>
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="table-responsive" id="search_list"></div>

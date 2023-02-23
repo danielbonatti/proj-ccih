@@ -59,7 +59,7 @@
 
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <label for="infos">Anotação</label>
+                            <label for="infos">Histórico</label>
                             <textarea class="form-control" id="infos" name="infos" rows="10">{{$infos}}</textarea>
                         </div>
                     </div>

@@ -16,22 +16,28 @@ class PesquisaController extends Controller
     {        
         if($request->ajax()){
 
-            //return $request->input('search');
+            /*return $request->input('search');
+
             $data = DB::table('chc_ate')
                 ->leftJoin('chc_pcc','chc_pcc.pcc_codigo','=','chc_ate.ate_codset')
                 ->leftJoin('clientes','clientes.xclientes','=','chc_ate.ate_conven')
-                ->where('chc_ate.ate_modate','35');
-
+                ->select('chc_ate.ate_nome','chc_pcc.pcc_especi','clientes.razao','chc_ate.nrecno','chc_ate.ate_modate')
+                ->whereNotNull('chc_ate.ate_nome')
+                ->where('chc_ate.ate_modate','=','35')
+                ;
+            
             // tipo de busca "contendo" ou "iniciando com"
             if($request->busca == 1){
-                $data = $data->where('chc_ate.ate_nome','like','%'.$request->search.'%')
-                    ->orWhere('chc_pcc.pcc_especi','like','%'.$request->search.'%');
+                $data = $data->where(function (Builder $query) {
+                    $query->where('chc_ate.ate_nome','like','%'.$request->search.'%')->orWhere('chc_pcc.pcc_especi','like','%'.$request->search.'%');
+                });
             } else {
-                $data = $data->where('chc_ate.ate_nome','like',$request->search.'%')
-                    ->orWhere('chc_pcc.pcc_especi','like',$request->search.'%');
+                $data = $data->where(function ($query) {
+                    $query->where('chc_ate.ate_nome','like',$request->search.'%')->orWhere('chc_pcc.pcc_especi','like',$request->search.'%');
+                });
             }
 
-            // ordena��o
+            // ordenação
             switch($request->ordem){
                 case 1:
                     $data = $data->orderBy('chc_ate.ate_nome','asc');
@@ -46,16 +52,25 @@ class PesquisaController extends Controller
                     $data = $data->orderBy('chc_pcc.pcc_especi','desc');
                     break;
             }
-
-            /*if($request->ordem == 1){
-                $data = $data->orderBy('chc_ate.ate_nome','asc');
-            } else {
-                $data = $data->orderBy('chc_ate.ate_nome','desc');
-            }*/
             
-            $data = $data->select('chc_ate.ate_nome','chc_pcc.pcc_especi','clientes.razao','chc_ate.nrecno')
-                ->limit(30)
-                ->get();
+            $data = $data->limit(30)
+                ->get();*/
+
+            // ==========================================
+
+            // tipo de busca "contendo" ou "iniciando com"
+            $tipo = $request->busca == 1 ? "%" : "";
+
+            $data = DB::select("select a.ate_nome,b.pcc_especi,c.razao,a.nrecno
+                from chc_ate a
+                left join chc_pcc b on b.pcc_codigo=a.ate_codset
+                left join clientes c on c.xclientes=a.ate_conven
+                where a.ate_modate='35'
+                and coalesce(a.ate_cancel,'N')='N'
+                and a.ate_nome is not null
+                and (a.ate_nome like '$tipo$request->search%' or pcc_especi like '$tipo$request->search%')
+                order by a.ate_nome
+                limit 30");
 
             $output='';
 
@@ -65,10 +80,10 @@ class PesquisaController extends Controller
                     <table class="table">
                     <thead class="thead-dark">
                     <tr>
-                        <th class="th-sm">Nome</th>
-                        <th class="th-sm">Setor</th>
-                        <th class="th-sm">Convênio</th>
-                        <th class="th-sm">Opções</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Setor</th>
+                        <th scope="col">Convênio</th>
+                        <th scope="col">Opções</th>
                     </tr>
                     </thead>
                     <tbody>';

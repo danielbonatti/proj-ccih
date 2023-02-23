@@ -71,7 +71,7 @@
                             <div class="img-card">
                                 <a href="{{route('patient.options',['id' => $nrecno, 'opc' => 2])}}">
                                     <i class="fa fa-file-text-o" style="font-size:80px;"></i>
-                                    <p>Anotações</p>
+                                    <p>Histórico</p>
                                 </a>
                             </div>
                         </div>
