@@ -77,12 +77,12 @@ class PesquisaController extends Controller
             if(count($data)>0){
         
                 $output ='
-                    <table class="table">
+                    <table class="table table-striped table-sortable">
                     <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Setor</th>
-                        <th scope="col">Convênio</th>
+                        <th scope="col" data-sort="string">Nome</th>
+                        <th scope="col" data-sort="string">Setor</th>
+                        <th scope="col" data-sort="string">Convênio</th>
                         <th scope="col">Opções</th>
                     </tr>
                     </thead>
@@ -104,7 +104,7 @@ class PesquisaController extends Controller
         
                 $output .= '
                     </tbody>
-                    </table>';
+                    </table><script>document.querySelector(".table-sortable").tsortable()</script>';
     
             }else{
         
