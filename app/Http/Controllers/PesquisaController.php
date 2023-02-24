@@ -61,8 +61,9 @@ class PesquisaController extends Controller
             // tipo de busca "contendo" ou "iniciando com"
             $tipo = $request->busca == 1 ? "%" : "";
 
-            $data = DB::select("select a.ate_nome,b.pcc_especi,c.razao,a.nrecno
+            $data = DB::select("select a.ate_nome,b.pcc_especi,c.razao,d.nrecno
                 from chc_ate a
+                right join gsc_cih d on d.cih_numate=a.ate_numate
                 left join chc_pcc b on b.pcc_codigo=a.ate_codset
                 left join clientes c on c.xclientes=a.ate_conven
                 where a.ate_modate='35'

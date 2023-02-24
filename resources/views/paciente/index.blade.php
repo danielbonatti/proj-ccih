@@ -79,7 +79,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Histórico</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Infecção Hospitalar</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
@@ -90,15 +90,15 @@
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="infos">Histórico</label>
-                                            <textarea class="form-control" id="infos" name="infos" rows="8"></textarea>
+                                            <textarea class="form-control" id="infos" name="infos" rows="8" autofocus></textarea>
                                         </div>
                                     </div>
                                     <input type="hidden" id="nrecno" name="nrecno" value="{{$nrecno}}">
-                                    <button type="submit" class="btn btn-primary">Gravar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg">Gravar</button>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fechar</button>
                             </div>
                         </div>
                     </div>
