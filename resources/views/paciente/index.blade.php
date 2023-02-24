@@ -58,7 +58,7 @@
                     <div class="form-group row">
                         <div class="col-md-12">
                             <label>Histórico</label>
-                            <textarea class="form-control" rows="15" id="histor" readonly>{{$infos}}</textarea>
+                            <textarea class="form-control" rows="14" id="histor" readonly>{{$infos}}</textarea>
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="infos">Histórico</label>
-                                            <textarea class="form-control" id="infos" name="infos" rows="8" autofocus></textarea>
+                                            <textarea class="form-control" id="infos" name="infos" rows="8"></textarea>
                                         </div>
                                     </div>
                                     <input type="hidden" id="nrecno" name="nrecno" value="{{$nrecno}}">

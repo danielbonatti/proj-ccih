@@ -54,7 +54,7 @@ class PacienteController extends Controller
 
         $data = DB::table('gsc_cih')
             ->where('nrecno',$request->nrecno)
-            ->update(['cih_histor' => DB::raw("concat(cih_histor,'$consu$dathor / $usuari\r\n$conteu')")]);
+            ->update(['cih_histor' => DB::raw("concat(coalesce(cih_histor,''),'$consu$dathor / $usuari\r\n$conteu')")]);
             //->update(['cih_histor' => DB::raw("concat(cih_histor,'\r\n$dathor / $usuari\r\n$request->infos')")]);
         
         if($data){
