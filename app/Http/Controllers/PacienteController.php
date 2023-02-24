@@ -38,9 +38,12 @@ class PacienteController extends Controller
     }
 
     public function gravar(Request $request){
+        date_default_timezone_set('America/Sao_Paulo');
+        
+        $dathor = date('#d/m/Y - H:i:s');
         $data = DB::table('chc_ate')
             ->where('nrecno',$request->nrecno)
-            ->update(['ate_infada' => $request->infos]);
+            ->update(['ate_infada' => DB::raw("concat(ate_infada,'\n\n$dathor / CCIH\n$request->infos')")]);
         
         if($data){
             return redirect()->back()->with('positivo','Anotação gravada com sucesso.');
