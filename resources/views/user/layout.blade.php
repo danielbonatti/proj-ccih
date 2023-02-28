@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Scripts -->
-    <script src="{{ asset('public/public/js/app.js') }}" defer></script>
+    <script src="{{ asset('public/js/app.js') }}" defer></script>
     <!-- Styles -->
     <link rel="icon" href="{{ asset('public/images/favicon-16x16.ico') }}" type="image/x-icon">
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
