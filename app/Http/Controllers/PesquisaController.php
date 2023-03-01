@@ -98,7 +98,7 @@ class PesquisaController extends Controller
                             <td>'.$row->ate_nome.'</td>
                             <td>'.$row->pcc_especi.'</td>
                             <td>'.$row->razao.'</td>
-                            <td><a href="'.$aux.'" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil fa-lg"></i></a></td>
+                            <td><a href="'.$aux.'" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa-solid fa-pen-to-square fa-lg"></i></a></td>
                             </tr>
                             ';
                         }

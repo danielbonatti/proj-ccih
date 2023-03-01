@@ -31,10 +31,21 @@
                             @endif
 
                             <div class="form-group">
-                                <input type="email" class="form-control" id="Email" name="email" placeholder="&#xf1fa; E-mail" style="font-family: FontAwesome, sans-serif" autofocus>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="Email" aria-label="Usuário" aria-describedby="basic-addon1" name="email" autofocus>
+                                </div>
                             </div>
+
                             <div class="form-group">
-                                <input type="password" class="form-control" id="Password" name="password" placeholder="&#xF023; Senha" style="font-family: FontAwesome, sans-serif">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Senha" aria-label="Usuário" aria-describedby="basic-addon1" name="password">
+                                </div>
                             </div>
                         
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>

@@ -38,42 +38,42 @@
             <div class="row w-100 text-center my-4">
                 <div class="col-6 col-md-2">
                     <a href="#" class="desativado">
-                        <i class="fa fa-clipboard" style="font-size:80px;"></i>
+                        <i class="fa-solid fa-clipboard-user fa-8x"></i>
                         <p>Dados Iniciais</p>
                     </a>
                 </div>
 
                 <div class="col-6 col-md-2">
                     <a href="{{route('patient.options',['id' => $nrecno, 'opc' => 2])}}">
-                        <i class="fa fa-file-text-o" style="font-size:80px;"></i>
+                        <i class="fa-solid fa-book fa-8x"></i>
                         <p>Histórico</p>
                     </a>
                 </div>
 
                 <div class="col-6 col-md-2">
                     <a href="#" class="desativado">
-                        <i class="fa fa-heartbeat" style="font-size:80px;"></i>
+                        <i class="fa-solid fa-heart-pulse fa-8x"></i>
                         <p>Cirurgias</p>
                     </a>
                 </div>
 
                 <div class="col-6 col-md-2">
                     <a href="#" class="desativado">
-                        <i class="fa fa-medkit" style="font-size:80px;"></i>
+                        <i class="fa-solid fa-suitcase-medical fa-8x"></i>
                         <p>Precaução</p>
                     </a>
                 </div>
 
                 <div class="col-6 col-md-2">
                     <a href="#" class="desativado">
-                        <i class="fa fa-hand-o-left" style="font-size:80px;"></i>
+                    <i class="fa-solid fa-door-open fa-8x"></i>
                         <p>Saída</p>
                     </a>
                 </div>
 
                 <div class="col-6 col-md-2">
                     <a href="#" class="desativado">
-                        <i class="fa fa-sticky-note-o" style="font-size:80px;"></i>
+                    <i class="fa-solid fa-print fa-8x"></i>
                         <p>Impressão</p>
                     </a>
                 </div>

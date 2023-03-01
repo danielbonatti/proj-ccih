@@ -9,7 +9,7 @@
     <!-- Styles -->
     <link rel="icon" href="{{ asset('public/images/favicon-16x16.ico') }}" type="image/x-icon">
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
     <style>
       .desativado:link, .desativado:hover, .desativado:visited {
         color: #C5C5C5;
@@ -33,7 +33,7 @@
     @yield('content')
 
     <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ asset('public/js/3.3.1/jquery.min.js') }}"></script>
 
     <script>
       $(document).ready(function(){
