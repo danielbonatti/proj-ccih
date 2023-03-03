@@ -36,7 +36,7 @@
             <!-- ############################### -->
 
             <div class="row w-100 text-center my-4">
-                <div class="col-6 col-md-2">
+                <div class="col-6col-md-2">
                     <a href="#" class="desativado">
                         <i class="fa-solid fa-clipboard-user fa-8x"></i>
                         <p>Dados Iniciais</p>
