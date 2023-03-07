@@ -16,7 +16,6 @@
                             <th scope="col">Opções</th>
                         </tr>
                         </thead>
-                        <tbody></tbody>
                     </table>
                 </div>
 

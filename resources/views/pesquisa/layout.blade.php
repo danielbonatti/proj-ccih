@@ -43,11 +43,6 @@
                                 return "<a href='anotacao/"+data+"/1' title='Editar'><i class='fa-solid fa-pen-to-square fa-lg'></i></a>";
                             }
                         }
-                        /*{data: "nrecno",
-                            "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                $(nTd).html("<a href='anotacao/"+oData.nrecno+"/1' title='Editar'><i class='fa-solid fa-pen-to-square fa-lg'></i></a>");
-                            }
-                        }*/
                     ],
 
                     language: {
