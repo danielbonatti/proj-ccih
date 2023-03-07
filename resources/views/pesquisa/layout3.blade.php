@@ -28,30 +28,10 @@
         <script src="{{ asset('public/datatables/1.13.3/js/jquery.dataTables.min.js') }}"></script>
         <!-- JavaScript -->
         <script>
-            $(document).ready(function(){                        
+            $(document).ready(function(){               
                 $('#lista').DataTable({
-                    processing: true,
-                    serverSide: true,
-                    ajax: "{{ route('search.record') }}",
-                    columns: [
-                        {data: "ate_nome"},
-                        {data: "pcc_especi"},
-                        {data: "razao"},
-                        {data: 'nrecno',
-                            orderable: false,
-                            render: function ( data, type, row ) {
-                                return "<a href='anotacao/"+data+"/1' title='Editar'><i class='fa-solid fa-pen-to-square fa-lg'></i></a>";
-                            }
-                        }
-                        /*{data: "nrecno",
-                            "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                $(nTd).html("<a href='anotacao/"+oData.nrecno+"/1' title='Editar'><i class='fa-solid fa-pen-to-square fa-lg'></i></a>");
-                            }
-                        }*/
-                    ],
-
                     language: {
-                        /*processing: 'Processando...',*/
+                        processing: 'Processando...',
                         lengthMenu: 'Mostar _MENU_ registros por página',
                         zeroRecords: 'Nada encontrado - desculpe',
                         info: 'Exibindo página _PAGE_ de _PAGES_',

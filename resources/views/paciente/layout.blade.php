@@ -33,7 +33,7 @@
     @yield('content')
 
     <!-- JavaScript -->
-    <script src="{{ asset('public/js/3.3.1/jquery.min.js') }}"></script>
+    <script src="{{ asset('public/js/3.5.1/jquery.min.js') }}"></script>
 
     <script>
       $(document).ready(function(){

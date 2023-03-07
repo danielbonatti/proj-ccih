@@ -40,6 +40,7 @@ class UsuarioController extends Controller
             //$request->session()->regenerate();
             // Logou
             return view('pesquisa.index');
+            //return redirect("/list");
         }else{
             // Não logou
             return redirect()->back()->with('danger','Credencial inválida');

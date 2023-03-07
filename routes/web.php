@@ -29,7 +29,7 @@ Route::get('/out',[UsuarioController::class,'out'])->name('user.out');
 
 Route::middleware(['client'])->group(function(){
     Route::get('/list',[PesquisaController::class,'index'])->name('search.patient');
-    Route::get('search',[PesquisaController::class,'search']);
+    Route::get('search',[PesquisaController::class,'search'])->name("search.record");
 
     Route::get('/anotacao/{id}/{opc}',[PacienteController::class,'note'])->name('patient.options');
 
